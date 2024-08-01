@@ -21,8 +21,8 @@ func contactPage(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	fs := http.FileServer(http.Dir("static/css/master.css"))
-	http.Handle("/css/", http.StripPrefix("/css", fs))
+	styles := http.FileServer(http.Dir("./static/css"))
+	http.Handle("/styles/", http.StripPrefix("/styles/", styles))
 
 	http.HandleFunc("/home", homePage)
 	http.HandleFunc("/about", abtPage)

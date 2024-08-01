@@ -21,6 +21,9 @@ func contactPage(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	fs := http.FileServer(http.Dir("static/css/master.css"))
+	http.Handle("/css/", http.StripPrefix("/css", fs))
+
 	http.HandleFunc("/home", homePage)
 	http.HandleFunc("/about", abtPage)
 	http.HandleFunc("/contact", contactPage)
@@ -29,7 +32,4 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-	fs := http.FileServer(http.Dir("./css"))
-	http.Handle("/css/", http.StripPrefix("/css", fs))
 }

@@ -5,6 +5,11 @@ import (
 	"net/http"
 )
 
+func style(w http.ResponseWriter, r *http.Request) {
+	// Rendering master css from static folder
+	http.ServeFile(w, r, "static/css/master.css")
+}
+
 func homePage(w http.ResponseWriter, r *http.Request) {
 	// Render the home html page from static folder
 	http.ServeFile(w, r, "static/home.html")
@@ -21,7 +26,7 @@ func contactPage(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-
+	http.HandleFunc("/", style)
 	http.HandleFunc("/home", homePage)
 	http.HandleFunc("/about", abtPage)
 	http.HandleFunc("/contact", contactPage)

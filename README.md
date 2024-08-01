@@ -1,7 +1,6 @@
 # Hello Fellas 👋
 
-This is a simple website written in Golang. It uses the net/http package to serve HTTP requests.
-
+This is a simple website written in Golang.
 # To Run the server
 
 execute the following command:

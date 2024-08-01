@@ -26,7 +26,7 @@ func contactPage(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	http.HandleFunc("/", style)
+	http.HandleFunc("", style)
 	http.HandleFunc("/home", homePage)
 	http.HandleFunc("/about", abtPage)
 	http.HandleFunc("/contact", contactPage)

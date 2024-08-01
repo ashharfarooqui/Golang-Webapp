@@ -12,12 +12,7 @@ func homePage(w http.ResponseWriter, r *http.Request) {
 
 func coursePage(w http.ResponseWriter, r *http.Request) {
 	// Render the course html page
-	http.ServeFile(w, r, "static/courses.html")
-}
-
-func aboutPage(w http.ResponseWriter, r *http.Request) {
-	// Render the about html page
-	http.ServeFile(w, r, "static/about.html")
+	http.ServeFile(w, r, "static/Hobbies.html")
 }
 
 func contactPage(w http.ResponseWriter, r *http.Request) {
@@ -28,8 +23,7 @@ func contactPage(w http.ResponseWriter, r *http.Request) {
 func main() {
 
 	http.HandleFunc("/home", homePage)
-	http.HandleFunc("/courses", coursePage)
-	http.HandleFunc("/about", aboutPage)
+	http.HandleFunc("/Hobbies", coursePage)
 	http.HandleFunc("/contact", contactPage)
 
 	err := http.ListenAndServe("0.0.0.0:8080", nil)

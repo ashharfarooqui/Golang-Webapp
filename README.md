@@ -9,7 +9,7 @@ execute the following command:
 go run main.go
 ```
 
-The server will start on port 8080. You can access it by navigating to `http://localhost:8080/about` in your web browser.
+The server will start on port 8080. You can access it by navigating to `http://localhost:8080/home` in your web browser.
 
 ## Looks like this
 
